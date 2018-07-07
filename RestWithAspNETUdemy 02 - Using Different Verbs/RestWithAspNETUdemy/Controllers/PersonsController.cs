@@ -1,44 +1,73 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using RestWithAspNETUdemy.Model;
+using RestWithAspNETUdemy.Services;
+using Utilities.Extension;
 
+/// <summary>
+/// Receives the EntryPoint Request, Ask the result for the Service and eturn the Response
+/// </summary>
 namespace RestWithAspNETUdemy.Controllers
 {
     [Route("api/[controller]")]
     public class PersonsController : Controller
     {
+        private IPersonService _personService;
+
+        /// <summary>
+        /// When instanciated, the Service will be automatically provided by the dependency injection
+        /// </summary>
+        /// <param name="service"></param>
+        /// <see cref="Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)"/>
+        public PersonsController(IPersonService service)
+        {
+            _personService = service;
+        }
+
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(_personService.FindByAll());
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(long id)
         {
-            return "value";
+            var person = _personService.FindById(id);
+            if (person.IsNull())
+                return NotFound();
+            return Ok(person);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult Post([FromBody]Person person)
         {
+            if (person.IsNull())
+                return BadRequest();
+            return new ObjectResult(_personService.Create(person));
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public IActionResult Put([FromBody]Person person)
         {
+            if (person == null)
+                return BadRequest();
+
+            person = _personService.Update(person);
+            if (person.IsNull())
+                return NotFound();
+            return new ObjectResult(person);
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(long id)
         {
+            _personService.Delete(id);
+            return NoContent();
         }
     }
 }

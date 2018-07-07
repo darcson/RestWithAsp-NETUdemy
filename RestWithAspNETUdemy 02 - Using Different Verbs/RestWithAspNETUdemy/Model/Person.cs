@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+/// <summary>
+/// Data model representation
+/// </summary>
 namespace RestWithAspNETUdemy.Model
 {
     public class Person
