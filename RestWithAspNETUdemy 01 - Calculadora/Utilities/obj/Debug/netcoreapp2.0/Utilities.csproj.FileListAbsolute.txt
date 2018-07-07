@@ -1,7 +1,6 @@
 C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\Utilities\bin\Debug\netcoreapp2.0\Utilities.deps.json
 C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\Utilities\bin\Debug\netcoreapp2.0\Utilities.dll
 C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\Utilities\bin\Debug\netcoreapp2.0\Utilities.pdb
-C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\Utilities\obj\Debug\netcoreapp2.0\Utilities.csprojAssemblyReference.cache
 C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\Utilities\obj\Debug\netcoreapp2.0\Utilities.csproj.CoreCompileInputs.cache
 C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\Utilities\obj\Debug\netcoreapp2.0\Utilities.AssemblyInfoInputs.cache
 C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\Utilities\obj\Debug\netcoreapp2.0\Utilities.AssemblyInfo.cs
