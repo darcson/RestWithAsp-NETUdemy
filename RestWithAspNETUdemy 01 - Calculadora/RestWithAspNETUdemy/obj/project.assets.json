@@ -12668,11 +12668,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Darcson\\Documents\\Projects\\ProjetoAulas\\RestWithAsp-NETUdemy\\RestWithAspNETUdemy\\RestWithAspNETUdemy\\RestWithAspNETUdemy.csproj",
+      "projectUniqueName": "C:\\Users\\Darcson\\Documents\\Projects\\ProjetoAulas\\RestWithAsp-NETUdemy\\RestWithAspNETUdemy 01 - Calculadora\\RestWithAspNETUdemy\\RestWithAspNETUdemy.csproj",
       "projectName": "RestWithAspNETUdemy",
-      "projectPath": "C:\\Users\\Darcson\\Documents\\Projects\\ProjetoAulas\\RestWithAsp-NETUdemy\\RestWithAspNETUdemy\\RestWithAspNETUdemy\\RestWithAspNETUdemy.csproj",
+      "projectPath": "C:\\Users\\Darcson\\Documents\\Projects\\ProjetoAulas\\RestWithAsp-NETUdemy\\RestWithAspNETUdemy 01 - Calculadora\\RestWithAspNETUdemy\\RestWithAspNETUdemy.csproj",
       "packagesPath": "C:\\Users\\Darcson\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Darcson\\Documents\\Projects\\ProjetoAulas\\RestWithAsp-NETUdemy\\RestWithAspNETUdemy\\RestWithAspNETUdemy\\obj\\",
+      "outputPath": "C:\\Users\\Darcson\\Documents\\Projects\\ProjetoAulas\\RestWithAsp-NETUdemy\\RestWithAspNETUdemy 01 - Calculadora\\RestWithAspNETUdemy\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -9,3 +9,14 @@ C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAs
 C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy\RestWithAspNETUdemy\obj\Debug\netcoreapp2.0\RestWithAspNETUdemy.AssemblyInfo.cs
 C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy\RestWithAspNETUdemy\obj\Debug\netcoreapp2.0\RestWithAspNETUdemy.dll
 C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy\RestWithAspNETUdemy\obj\Debug\netcoreapp2.0\RestWithAspNETUdemy.pdb
+C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\RestWithAspNETUdemy\bin\Debug\netcoreapp2.0\RestWithAspNETUdemy.deps.json
+C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\RestWithAspNETUdemy\bin\Debug\netcoreapp2.0\RestWithAspNETUdemy.runtimeconfig.json
+C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\RestWithAspNETUdemy\bin\Debug\netcoreapp2.0\RestWithAspNETUdemy.runtimeconfig.dev.json
+C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\RestWithAspNETUdemy\bin\Debug\netcoreapp2.0\RestWithAspNETUdemy.dll
+C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\RestWithAspNETUdemy\bin\Debug\netcoreapp2.0\RestWithAspNETUdemy.pdb
+C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\RestWithAspNETUdemy\obj\Debug\netcoreapp2.0\RestWithAspNETUdemy.csprojAssemblyReference.cache
+C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\RestWithAspNETUdemy\obj\Debug\netcoreapp2.0\RestWithAspNETUdemy.csproj.CoreCompileInputs.cache
+C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\RestWithAspNETUdemy\obj\Debug\netcoreapp2.0\RestWithAspNETUdemy.AssemblyInfoInputs.cache
+C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\RestWithAspNETUdemy\obj\Debug\netcoreapp2.0\RestWithAspNETUdemy.AssemblyInfo.cs
+C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\RestWithAspNETUdemy\obj\Debug\netcoreapp2.0\RestWithAspNETUdemy.dll
+C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\RestWithAspNETUdemy\obj\Debug\netcoreapp2.0\RestWithAspNETUdemy.pdb
