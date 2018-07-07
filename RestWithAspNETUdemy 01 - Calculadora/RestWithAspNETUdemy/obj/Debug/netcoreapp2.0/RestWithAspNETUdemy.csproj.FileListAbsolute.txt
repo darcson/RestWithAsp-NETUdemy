@@ -20,3 +20,6 @@ C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAs
 C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\RestWithAspNETUdemy\obj\Debug\netcoreapp2.0\RestWithAspNETUdemy.AssemblyInfo.cs
 C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\RestWithAspNETUdemy\obj\Debug\netcoreapp2.0\RestWithAspNETUdemy.dll
 C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\RestWithAspNETUdemy\obj\Debug\netcoreapp2.0\RestWithAspNETUdemy.pdb
+C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\RestWithAspNETUdemy\bin\Debug\netcoreapp2.0\Utilities.dll
+C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\RestWithAspNETUdemy\bin\Debug\netcoreapp2.0\Utilities.pdb
+C:\Users\Darcson\Documents\Projects\ProjetoAulas\RestWithAsp-NETUdemy\RestWithAspNETUdemy 01 - Calculadora\RestWithAspNETUdemy\obj\Debug\netcoreapp2.0\RestWithAspNETUdemy.csproj.CopyComplete

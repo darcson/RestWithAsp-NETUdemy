@@ -3,33 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Utilities;
 
 namespace RestWithAspNETUdemy.Controllers
 {
     [Route("api/[controller]")]
     public class CalculatorController : Controller
     {
-        // GET api/values/5
+        // GET api/Sum/values/5
         [HttpGet("Sum/{firstNumber}/{secondNumber}")]
         public IActionResult Sum(string firstNumber, string secondNumber)
             => ExecuteCalculation(firstNumber, secondNumber, (a, b) => a + b);
 
+        // GET api/Sub/values/5
         [HttpGet("Sub/{firstNumber}/{secondNumber}")]
         public IActionResult Sub(string firstNumber, string secondNumber)
             => ExecuteCalculation(firstNumber, secondNumber, (a, b) => a - b);
 
+        // GET api/Div/values/5
         [HttpGet("Div/{firstNumber}/{secondNumber}")]
         public IActionResult Div(string firstNumber, string secondNumber)
             => ExecuteCalculation(firstNumber, secondNumber, (a, b) => a/(b == 0 ? 1 : b));
 
+        // GET api/Times/values/5
         [HttpGet("Times/{firstNumber}/{secondNumber}")]
         public IActionResult Times(string firstNumber, string secondNumber)
             => ExecuteCalculation(firstNumber, secondNumber, (a, b) => a * b);
 
+        // GET api/Avg/values/5
         [HttpGet("Avg/{firstNumber}/{secondNumber}")]
         public IActionResult Avg(string firstNumber, string secondNumber)
             => ExecuteCalculation(firstNumber, secondNumber, (a, b) =>  (a+b)/2);
 
+        // GET api/Sqr/values/5
         [HttpGet("Sqr/{number}")]
         public IActionResult Square(string number)
             => ExecuteCalculation(number, a => (decimal)Math.Sqrt(Convert.ToDouble(a)));
@@ -37,9 +43,9 @@ namespace RestWithAspNETUdemy.Controllers
         #region private
         private IActionResult ExecuteCalculation(string firstNumber, string secondNumber, Func<decimal, decimal, decimal> calculator)
         {
-            if (IsNumeric(firstNumber) && (IsNumeric(secondNumber)))
+            if (firstNumber.IsNumeric() && secondNumber.IsNumeric())
             {
-                var sum = calculator(ConvertToDecimal(firstNumber), ConvertToDecimal(secondNumber));
+                var sum = calculator(firstNumber.ConvertToDecimal(), secondNumber.ConvertToDecimal());
                 return Ok(sum.ToString());
             }
             return BadRequest("Invalid Input");
@@ -47,26 +53,12 @@ namespace RestWithAspNETUdemy.Controllers
 
         private IActionResult ExecuteCalculation(string number, Func<decimal, decimal> calculator)
         {
-            if (IsNumeric(number))
+            if (number.IsNumeric())
             {
-                var sum = calculator(ConvertToDecimal(number));
+                var sum = calculator(number.ConvertToDecimal());
                 return Ok(sum.ToString());
             }
             return BadRequest("Invalid Input");
-        }
-
-        private decimal ConvertToDecimal(string strValue)
-        {
-            var decimalValue = 0m;
-            return decimal.TryParse(strValue, out decimalValue)
-                ? decimalValue
-                : 0m;
-        }
-
-        private bool IsNumeric(string strValue)
-        {
-            var temp = 0.0;
-            return !string.IsNullOrEmpty(strValue.Trim()) && double.TryParse(strValue, System.Globalization.NumberStyles.Any, System.Globalization.NumberFormatInfo.InvariantInfo,out temp);
         }
         #endregion
     }
