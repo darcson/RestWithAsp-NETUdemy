@@ -27,7 +27,7 @@ namespace RestWithAspNETUdemy.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_personService.FindByAll());
+            return Ok(_personService.FindAll());
         }
 
         // GET api/values/5
@@ -50,7 +50,6 @@ namespace RestWithAspNETUdemy.Controllers
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
         public IActionResult Put([FromBody]Person person)
         {
             if (person == null)
@@ -63,7 +62,7 @@ namespace RestWithAspNETUdemy.Controllers
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
+        [HttpGet("{id}")]
         public IActionResult Delete(long id)
         {
             _personService.Delete(id);
