@@ -33,7 +33,7 @@ namespace RestWithAspNETUdemy
             //adding DB connections settings here - end
 
             services.AddMvc();
-
+            services.AddApiVersioning();
             //dependency injection -- Add all services here, then, add a ref of the service into the controller - start
             services.AddScoped<IPersonService, PersonServiceImpl>();
             //dependency injection -- Add all services here, then, add a ref of the service into the controller - end

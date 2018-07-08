@@ -8,7 +8,8 @@ using Utilities.Extension;
 /// </summary>
 namespace RestWithAspNETUdemy.Controllers
 {
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/[controller]/v{version:apiVersion}")]
     public class PersonsController : Controller
     {
         private IPersonService _personService;
