@@ -1,12 +1,12 @@
 ﻿using RestWithAspNETUdemy.Model;
 using System.Collections.Generic;
 
-namespace RestWithAspNETUdemy.Services
+namespace RestWithAspNETUdemy.Repository
 {
     /// <summary>
     /// Contract with the Exposed/available entryPoints
     /// </summary>
-    public interface IPersonService
+    public interface IPersonRepository
     {
         Person Create(Person person);
         Person FindById(long id);

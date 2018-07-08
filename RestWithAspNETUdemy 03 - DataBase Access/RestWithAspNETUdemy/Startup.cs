@@ -9,9 +9,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using RestWithAspNETUdemy.Model.Context;
-using RestWithAspNETUdemy.Services;
-using RestWithAspNETUdemy.Services.Implementations;
+using RestWithAspNETUdemy.Repository;
+using RestWithAspNETUdemy.Repository.Implementations;
 using Microsoft.EntityFrameworkCore;
+using RestWithAspNETUdemy.Business;
+using RestWithAspNETUdemy.Business.Implementations;
 
 namespace RestWithAspNETUdemy
 {
@@ -35,7 +37,8 @@ namespace RestWithAspNETUdemy
             services.AddMvc();
             services.AddApiVersioning();
             //dependency injection -- Add all services here, then, add a ref of the service into the controller - start
-            services.AddScoped<IPersonService, PersonServiceImpl>();
+            services.AddScoped<IPersonBusiness, PersonBusinessImpl>();
+            services.AddScoped<IPersonRepository, PersonRepositoryImpl>(); 
             //dependency injection -- Add all services here, then, add a ref of the service into the controller - end
         }
 

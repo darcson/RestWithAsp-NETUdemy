@@ -6,13 +6,16 @@ using RestWithAspNETUdemy.Model;
 using RestWithAspNETUdemy.Model.Context;
 using Utilities.Extension;
 
-namespace RestWithAspNETUdemy.Services.Implementations
+namespace RestWithAspNETUdemy.Repository.Implementations
 {
-    public class PersonServiceImpl : IPersonService
+    /// <summary>
+    /// services are responsable for the business Rules and call the Database
+    /// </summary>
+    public class PersonRepositoryImpl : IPersonRepository
     {
         private SQLContext _context;
 
-        public PersonServiceImpl(SQLContext context)
+        public PersonRepositoryImpl(SQLContext context)
         {
             _context = context;
         }

@@ -11,7 +11,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/Persons",
+      "launchUrl": "api/Persons/v{version:apiVersion}",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -19,7 +19,7 @@
     "RestWithAspNETUdemy": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/Persons",
+      "launchUrl": "api/Persons/v{version:apiVersion}",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using RestWithAspNETUdemy.Business;
+using RestWithAspNETUdemy.Business.Implementations;
 using RestWithAspNETUdemy.Controllers;
 using RestWithAspNETUdemy.Model;
 using RestWithAspNETUdemy.Model.Context;
-using RestWithAspNETUdemy.Services;
-using RestWithAspNETUdemy.Services.Implementations;
+using RestWithAspNETUdemy.Repository;
+using RestWithAspNETUdemy.Repository.Implementations;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -100,8 +102,9 @@ namespace UT_RestWithAspNETUdemy.Controllers
             var dbContextOption = new DbContextOptionsBuilder<SQLContext>();
             dbContextOption.UseSqlServer(stringConnection);
             var sqlContext = new SQLContext(dbContextOption.Options);
-            IPersonService personService = new PersonServiceImpl(sqlContext);
-            PersonsController personsController = new PersonsController(personService);
+            IPersonRepository personRepository = new PersonRepositoryImpl(sqlContext);
+            IPersonBusiness personBusiness = new PersonBusinessImpl(personRepository);
+            PersonsController personsController = new PersonsController(personBusiness);
             return personsController;
         }
         #endregion

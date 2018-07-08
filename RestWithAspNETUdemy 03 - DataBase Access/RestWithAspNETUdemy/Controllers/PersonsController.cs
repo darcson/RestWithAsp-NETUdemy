@@ -1,41 +1,42 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RestWithAspNETUdemy.Business;
 using RestWithAspNETUdemy.Model;
-using RestWithAspNETUdemy.Services;
+using RestWithAspNETUdemy.Repository;
 using Utilities.Extension;
 
 /// <summary>
-/// Receives the EntryPoint Request, Ask the result for the Service and eturn the Response
+/// Receives the EntryPoint Request, Ask the result for the Business and eturn the Response
 /// </summary>
 namespace RestWithAspNETUdemy.Controllers
 {
-    [ApiVersion("1.0")]
+    [ApiVersion("1")]
     [Route("api/[controller]/v{version:apiVersion}")]
     public class PersonsController : Controller
     {
-        private IPersonService _personService;
+        private IPersonBusiness _personBusiness;
 
         /// <summary>
-        /// When instanciated, the Service will be automatically provided by the dependency injection
+        /// When instanciated, the Business will be automatically provided by the dependency injection
         /// </summary>
-        /// <param name="service"></param>
+        /// <param name="business"></param>
         /// <see cref="Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)"/>
-        public PersonsController(IPersonService service)
+        public PersonsController(IPersonBusiness business)
         {
-            _personService = service;
+            _personBusiness = business;
         }
 
         // GET api/values
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_personService.FindAll());
+            return Ok(_personBusiness.FindAll());
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public IActionResult Get(long id)
         {
-            var person = _personService.FindById(id);
+            var person = _personBusiness.FindById(id);
             if (person.IsNull())
                 return NotFound();
             return Ok(person);
@@ -47,7 +48,7 @@ namespace RestWithAspNETUdemy.Controllers
         {
             if (person.IsNull())
                 return BadRequest();
-            return new ObjectResult(_personService.Create(person));
+            return new ObjectResult(_personBusiness.Create(person));
         }
 
         // PUT api/values/5
@@ -56,7 +57,7 @@ namespace RestWithAspNETUdemy.Controllers
             if (person == null)
                 return BadRequest();
 
-            person = _personService.Update(person);
+            person = _personBusiness.Update(person);
             if (person.IsNull())
                 return NotFound();
             return new ObjectResult(person);
@@ -66,7 +67,7 @@ namespace RestWithAspNETUdemy.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(long id)
         {
-            _personService.Delete(id);
+            _personBusiness.Delete(id);
             return NoContent();
         }
     }
