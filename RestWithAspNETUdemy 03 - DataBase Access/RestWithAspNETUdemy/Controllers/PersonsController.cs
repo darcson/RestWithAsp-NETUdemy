@@ -62,7 +62,7 @@ namespace RestWithAspNETUdemy.Controllers
         }
 
         // DELETE api/values/5
-        [HttpGet("{id}")]
+        [HttpDelete("{id}")]
         public IActionResult Delete(long id)
         {
             _personService.Delete(id);

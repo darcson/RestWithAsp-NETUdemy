@@ -77,7 +77,7 @@ namespace RestWithAspNETUdemy.Services.Implementations
 
             var dbPerson = FindById(person.Id.GetValueOrDefault());
             if (dbPerson.IsNull())
-                return new Person();
+                return null;
 
             try
             {
