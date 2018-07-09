@@ -1,0 +1,7 @@
+﻿{
+  "Evolve.Driver": "SqlClient",
+  "Evolve.ConnectionString": "Data Source=DESKTOP-DFVE2G8;Initial Catalog=rest_with_asp_net_udemy;Integrated Security=False;User ID=darcson;Password=admin",
+  "Evolve.Locations": "db",
+  "Evolve.Command": "migrate",
+  "Evolve.Placeholder.table4": "table4"
+}
