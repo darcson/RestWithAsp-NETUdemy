@@ -3,14 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using RestWithAspNETUdemy.Business;
 using RestWithAspNETUdemy.Business.Implementations;
 using RestWithAspNETUdemy.Controllers;
+using RestWithAspNETUdemy.Data.VO;
 using RestWithAspNETUdemy.Model;
 using RestWithAspNETUdemy.Model.Context;
-using RestWithAspNETUdemy.Repository;
 using RestWithAspNETUdemy.Repository.Generic;
-using RestWithAspNETUdemy.Repository.Implementations;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace UT_RestWithAspNETUdemy.Controllers
@@ -28,8 +25,8 @@ namespace UT_RestWithAspNETUdemy.Controllers
         [Fact]
         public void GetById_Ok()
         {
-            var person = BuildPerson();
-            _personsController.Post(person);
+            var person = BuildPersonVO();
+            person = ((_personsController.Post(person) as ObjectResult).Value as PersonVO);
             Assert.IsType<OkObjectResult>(_personsController.Get(person.Id.GetValueOrDefault()));
         }
 
@@ -42,10 +39,8 @@ namespace UT_RestWithAspNETUdemy.Controllers
         [Fact]
         public void Post_Ok()
         {
-            var person = BuildPerson();
-            var result = _personsController.Post(person);
-            var resultStatus = (result as ObjectResult).StatusCode.GetValueOrDefault();
-            Assert.True(((result as ObjectResult).Value as Person)?.Id > 0);
+            var person = BuildPersonVO();
+            person = ((_personsController.Post(person) as ObjectResult).Value as PersonVO);
         }
 
         [Fact]
@@ -57,11 +52,11 @@ namespace UT_RestWithAspNETUdemy.Controllers
         [Fact]
         public void Put_Ok()
         {
-            var person = BuildPerson();
-            _personsController.Post(person);
+            var person = BuildPersonVO();
+            person = ((_personsController.Post(person) as ObjectResult).Value as PersonVO);
             person.FirstName += " UPDATED VALUE";
             var result = _personsController.Put(person);
-            Assert.True(((result as ObjectResult).Value as Person)?.Id > 0);
+            Assert.True(((result as ObjectResult).Value as PersonVO).Id > 0);
         }
 
         [Fact]
@@ -73,22 +68,22 @@ namespace UT_RestWithAspNETUdemy.Controllers
         [Fact]
         public void Put_NotFound()
         {
-            Assert.IsType<NotFoundResult>(_personsController.Put(new Person { Id = long.MinValue }));
+            Assert.IsType<NotFoundResult>(_personsController.Put(new PersonVO { Id = long.MinValue }));
         }
 
         [Fact]
         public void Delete()
         {
-            var person = BuildPerson();
+            var person = BuildPersonVO();
             _personsController.Post(person);
             Assert.IsType<NoContentResult>(_personsController.Delete(person.Id.GetValueOrDefault()));
         }
 
         #region helper
-        private static Person BuildPerson()
+        private static PersonVO BuildPersonVO()
         {
             var personNumber = new Random().Next();
-            return new Person
+            return new PersonVO
             {
                 FirstName = $"First name - Person Nr. {personNumber}",
                 LastName = $"Last Name - Person Nr. {personNumber}",

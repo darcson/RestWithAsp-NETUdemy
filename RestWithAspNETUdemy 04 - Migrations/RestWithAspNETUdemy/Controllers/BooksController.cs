@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RestWithAspNETUdemy.Business;
+using RestWithAspNETUdemy.Data.VO;
+using RestWithAspNETUdemy.Extensions;
 using RestWithAspNETUdemy.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Utilities.Extension;
 
 namespace RestWithAspNETUdemy.Controllers
 {
@@ -44,7 +41,7 @@ namespace RestWithAspNETUdemy.Controllers
 
         // POST api/values
         [HttpPost]
-        public IActionResult Post([FromBody]Book book)
+        public IActionResult Post([FromBody]BookVO book)
         {
             if (book.IsNull())
                 return BadRequest();
@@ -52,7 +49,7 @@ namespace RestWithAspNETUdemy.Controllers
         }
 
         // PUT api/values/5
-        public IActionResult Put([FromBody]Book book)
+        public IActionResult Put([FromBody]BookVO book)
         {
             if (book == null)
                 return BadRequest();

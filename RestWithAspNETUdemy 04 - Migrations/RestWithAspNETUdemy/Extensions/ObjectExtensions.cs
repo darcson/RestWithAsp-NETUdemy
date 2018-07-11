@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Utilities.Extension
+namespace RestWithAspNETUdemy.Extensions
 {
     public static class ObjectExtensions
     {

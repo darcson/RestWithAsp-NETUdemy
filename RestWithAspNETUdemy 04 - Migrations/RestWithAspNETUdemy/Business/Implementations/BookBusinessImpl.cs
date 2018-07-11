@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
+using RestWithAspNETUdemy.Data.VO;
+using RestWithAspNETUdemy.Extensions;
 using RestWithAspNETUdemy.Model;
-using RestWithAspNETUdemy.Model.Context;
-using RestWithAspNETUdemy.Repository;
 using RestWithAspNETUdemy.Repository.Generic;
-using Utilities.Extension;
 
 namespace RestWithAspNETUdemy.Business.Implementations
 {
@@ -21,9 +18,9 @@ namespace RestWithAspNETUdemy.Business.Implementations
             _repository = repository;
         }
 
-        public Book Create(Book book)
+        public BookVO Create(BookVO book)
         {
-            return _repository.Create(book);
+            return _repository.Create(book.AsEntity()).AsVO();
         }
 
         public void Delete(long id)
@@ -31,19 +28,19 @@ namespace RestWithAspNETUdemy.Business.Implementations
             _repository.Delete(id);
         }
 
-        public List<Book> FindAll()
+        public IEnumerable<BookVO> FindAll()
         {
-            return _repository.FindAll();
+            return _repository.FindAll().Select(b => b.AsVO());
         }
 
-        public Book FindById(long id)
+        public BookVO FindById(long id)
         {
-            return _repository.FindById(id);
+            return _repository.FindById(id).AsVO();
         }
 
-        public Book Update(Book book)
+        public BookVO Update(BookVO book)
         {
-            return _repository.Update(book);
+            return _repository.Update(book.AsEntity()).AsVO();
         }
     }
 }

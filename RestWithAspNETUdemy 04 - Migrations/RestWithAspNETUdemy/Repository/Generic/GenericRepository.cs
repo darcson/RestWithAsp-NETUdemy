@@ -1,11 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RestWithAspNETUdemy.Extensions;
 using RestWithAspNETUdemy.Model.Base;
 using RestWithAspNETUdemy.Model.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Utilities.Extension;
 
 namespace RestWithAspNETUdemy.Repository.Generic
 {

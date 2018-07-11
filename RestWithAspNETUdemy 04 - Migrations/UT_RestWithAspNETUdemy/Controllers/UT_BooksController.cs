@@ -3,14 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using RestWithAspNETUdemy.Business;
 using RestWithAspNETUdemy.Business.Implementations;
 using RestWithAspNETUdemy.Controllers;
+using RestWithAspNETUdemy.Data.VO;
 using RestWithAspNETUdemy.Model;
 using RestWithAspNETUdemy.Model.Context;
-using RestWithAspNETUdemy.Repository;
 using RestWithAspNETUdemy.Repository.Generic;
-using RestWithAspNETUdemy.Repository.Implementations;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace UT_RestWithAspNETUdemy.Controllers
@@ -28,8 +25,8 @@ namespace UT_RestWithAspNETUdemy.Controllers
         [Fact]
         public void GetById_Ok()
         {
-            var book = BuildBook();
-            _booksController.Post(book);
+            var book = BuildBookVO();
+            book = ((_booksController.Post(book) as ObjectResult).Value as BookVO);
             Assert.IsType<OkObjectResult>(_booksController.Get(book.Id.GetValueOrDefault()));
         }
 
@@ -42,9 +39,9 @@ namespace UT_RestWithAspNETUdemy.Controllers
         [Fact]
         public void Post_Ok()
         {
-            var book = BuildBook();
-            var result = _booksController.Post(book);
-            Assert.True(((result as ObjectResult).Value as Book)?.Id > 0);
+            var book = BuildBookVO();
+            book = ((_booksController.Post(book) as ObjectResult).Value as BookVO);
+            Assert.True(book?.Id > 0);
         }
 
         [Fact]
@@ -56,11 +53,11 @@ namespace UT_RestWithAspNETUdemy.Controllers
         [Fact]
         public void Put_Ok()
         {
-            var book = BuildBook();
-            _booksController.Post(book);
+            var book = BuildBookVO();
+            book = ((_booksController.Post(book) as ObjectResult).Value as BookVO);
             book.Author += " UPDATED VALUE";
             var result = _booksController.Put(book);
-            Assert.True(((result as ObjectResult).Value as Book)?.Id > 0);
+            Assert.True(((result as ObjectResult).Value as BookVO).Id > 0);
         }
 
         [Fact]
@@ -72,22 +69,22 @@ namespace UT_RestWithAspNETUdemy.Controllers
         [Fact]
         public void Put_NotFound()
         {
-            Assert.IsType<NotFoundResult>(_booksController.Put(new Book { Id = long.MinValue }));
+            Assert.IsType<NotFoundResult>(_booksController.Put(new BookVO { Id = long.MinValue }));
         }
 
         [Fact]
         public void Delete()
         {
-            var person = BuildBook();
+            var person = BuildBookVO();
             _booksController.Post(person);
             Assert.IsType<NoContentResult>(_booksController.Delete(person.Id.GetValueOrDefault()));
         }
 
         #region helper
-        private static Book BuildBook()
+        private static BookVO BuildBookVO()
         {
             var bookNumber = new Random().Next();
-            return new Book
+            return new BookVO
             {
                 Author = $"Author number {bookNumber}",
                 LaunchDate = DateTime.Now,

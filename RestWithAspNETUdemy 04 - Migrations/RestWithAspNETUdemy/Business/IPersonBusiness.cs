@@ -1,4 +1,5 @@
-﻿using RestWithAspNETUdemy.Model;
+﻿using RestWithAspNETUdemy.Data.VO;
+using RestWithAspNETUdemy.Model;
 using System.Collections.Generic;
 
 namespace RestWithAspNETUdemy.Business
@@ -8,10 +9,10 @@ namespace RestWithAspNETUdemy.Business
     /// </summary>
     public interface IPersonBusiness
     {
-        Person Create(Person person);
-        Person FindById(long id);
-        List<Person> FindAll();
-        Person Update(Person person);
+        PersonVO Create(PersonVO person);
+        PersonVO FindById(long id);
+        IEnumerable<PersonVO> FindAll();
+        PersonVO Update(PersonVO person);
         void Delete(long id);
     }
 }

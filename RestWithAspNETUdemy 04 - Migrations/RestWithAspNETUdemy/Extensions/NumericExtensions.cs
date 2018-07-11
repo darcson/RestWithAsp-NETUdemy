@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Utilities
+namespace RestWithAspNETUdemy.Extensions
 {
     public static class NumericExtensions
     {

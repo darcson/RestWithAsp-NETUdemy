@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using RestWithAspNETUdemy.Data.Converters;
+using RestWithAspNETUdemy.Data.VO;
+using RestWithAspNETUdemy.Extensions;
 using RestWithAspNETUdemy.Model;
-using RestWithAspNETUdemy.Repository;
 using RestWithAspNETUdemy.Repository.Generic;
 
 namespace RestWithAspNETUdemy.Business.Implementations
@@ -16,9 +19,9 @@ namespace RestWithAspNETUdemy.Business.Implementations
             _repository = repository;
         }
 
-        public Person Create(Person person)
+        public PersonVO Create(PersonVO PersonVO)
         {
-            return _repository.Create(person);
+            return _repository.Create(PersonVO.AsEntity()).AsVO();
         }
 
         public void Delete(long id)
@@ -26,19 +29,19 @@ namespace RestWithAspNETUdemy.Business.Implementations
             _repository.Delete(id);
         }
 
-        public List<Person> FindAll()
+        public IEnumerable<PersonVO> FindAll()
         {
-            return _repository.FindAll();
+            return _repository.FindAll().Select(p => p.AsVO());
         }
 
-        public Person FindById(long id)
+        public PersonVO FindById(long id)
         {
-            return _repository.FindById(id);
+            return _repository.FindById(id).AsVO();
         }
 
-        public Person Update(Person person)
+        public PersonVO Update(PersonVO PersonVO)
         {
-            return _repository.Update(person);
+            return _repository.Update(PersonVO.AsEntity()).AsVO();
         }
 
         #region helpers

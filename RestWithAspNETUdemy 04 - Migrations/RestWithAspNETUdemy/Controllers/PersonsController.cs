@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RestWithAspNETUdemy.Business;
+using RestWithAspNETUdemy.Data.VO;
+using RestWithAspNETUdemy.Extensions;
 using RestWithAspNETUdemy.Model;
-using RestWithAspNETUdemy.Repository;
-using Utilities.Extension;
 
 /// <summary>
 /// Receives the EntryPoint Request, Ask the result for the Business and eturn the Response
@@ -44,7 +44,7 @@ namespace RestWithAspNETUdemy.Controllers
 
         // POST api/values
         [HttpPost]
-        public IActionResult Post([FromBody]Person person)
+        public IActionResult Post([FromBody]PersonVO person)
         {
             if (person.IsNull())
                 return BadRequest();
@@ -52,7 +52,7 @@ namespace RestWithAspNETUdemy.Controllers
         }
 
         // PUT api/values/5
-        public IActionResult Put([FromBody]Person person)
+        public IActionResult Put([FromBody]PersonVO person)
         {
             if (person == null)
                 return BadRequest();
